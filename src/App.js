@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload daxappbb  aagi9n.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import './App.css'
 
-export default App;
+class App extends Component {
+
+  state = {
+    isLogged :  false
+  }
+     defferentFunc = () => { 
+    this.setState(preveState => ({ isLogged: !preveState.isLogged }))
+     }
+     render() {
+         const { isLogged } = this.state 
+       const buttonOn = isLogged ? 'Light Mode' : 'Dark Mode';
+       const buttonColor = isLogged ? 'Light' : 'Dark ';
+         const someEd= isLogged ? 'cont-black' : 'cont-white'
+         const heading = isLogged ? 'white' : 'black';
+         return (
+           <diV className="main-cont">
+             <div className ={`sub-cont ${someEd}`}>
+               <h1 className={`${heading}`}>Click To Change Mode</h1>
+               <button className={`${buttonColor}`} onClick={this.defferentFunc}>{buttonOn }</button>
+             </div>
+           </diV>
+         )
+       }
+       }
+       export default App
+       
+  
+      
+  
+    
+
+    
+    
+      
+   
+   
+   
+
+   
+             
+
+
+        
+        
+
+    
